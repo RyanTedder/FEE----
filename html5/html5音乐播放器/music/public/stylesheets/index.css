@@ -1,0 +1,235 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;  /*设置盒子模型*/
+}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+html,body{
+	height: 100%;
+}
+body{
+	font: 14px "Lucida Grande",Helvetica,Arial,sans-serif;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	overflow: hidden;
+}
+.start img{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 70%;
+	left: calc(50% - 30px);
+	z-index: 1;
+	cursor: pointer;
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);		
+}
+.start img:hover{
+	-moz-transform: rotate(360deg);	
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);	
+	-moz-transition: -moz-transform 1s linear;	
+	-webkit-transition: -webkit-transform 1s linear;	
+	transition: transform 1s linear;	
+}
+header,.left{
+	position: absolute;
+}
+header{
+	left: 10px;
+	top: 10px;
+	right: 10px;
+	height: 150px;
+}
+
+header h1{
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 5px;
+	font-size: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-family: "方正喵呜体", sans-serif;
+	color: rgba(255,0,0,0.8);	
+	transition: all 0.2s linear;
+}
+header h1:hover{
+	transform: scale(1.1);
+	color: #E6E6E6;
+}
+header p{
+	font-weight: bold;
+}
+header ul{
+	margin: 5px 0;
+	list-style: none;
+}
+header ul li{
+	display: inline-block;
+	width: 64px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	background: linear-gradient(#FDE3EC,#FDB6CF);
+	cursor: pointer;
+	color: black;
+	transition: color 0.2s linear;
+	border: 1px solid white;	
+}
+header ul li.choosed{
+	background: transparent;
+	color: white;
+	cursor: not-allowed;
+}
+header ul li:hover{
+	color: #EB2E10;	
+}
+header ul li:first-child{
+	border-radius: 10px 0 0 0; 
+	margin-right: -4px;
+	border-right: none;
+}
+header ul li:last-child{
+	border-radius: 0 0 10px 0 ; 
+}
+header p{
+	margin-top: 10px;
+}
+.fork a img{
+	position: absolute;
+	cursor: pointer;
+	z-index: 1;
+	right: 0;
+	top: 0;
+	width: 150px;
+	transition: width 0.2s linear;	
+}
+.fork a img:hover,.fork a img:focus{
+	width: 160px;
+}	
+.left{
+	left: 10px;
+	top: 170px;
+	bottom: 15px;
+	width: 15%;
+	border:2px solid #C2E1BF;
+	box-shadow: 5px 5px 10px #F2F0A2;
+	border-radius: 20px 0;
+	overflow: hidden;
+}
+.left ul{
+	overflow: auto;
+	list-style: none;	
+}
+.left ul li{
+	height: 30px;
+	line-height: 30px;
+	color: #EFF5D7;
+	font-weight: bold;
+	cursor: pointer;
+	overflow: hidden;     /*超出隐藏*/
+	white-space: nowrap;   /* 不换行*/
+	text-overflow: ellipsis;     /*省略号*/
+	transition: color 0.2s linear;
+}
+.left ul li:hover{
+	color: #EB2E10;
+	background:linear-gradient(#FDE3EC,#FBA2C1);
+}
+.left ul li.selected{
+	color: #1B9BDB;
+}
+.left img{
+	width: 65%;
+	margin: 20px auto;
+	cursor: pointer;
+}
+.right{
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+input{
+	cursor: pointer;
+}
+input[type="range"]{    /* 设置音量改变的样式*/
+	-webkit-appearance: none;
+	height: 8px;
+	background: #999;
+	border-radius: 10px;
+	outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{ /*利用伪类设置滑块*/
+	-webkit-appearance: none;
+	height: 12px;
+	width: 12px;
+	background:linear-gradient(#FDE3EC,#1A99D9);
+	border-radius: 100%;
+}
+
+/*兼容moz火狐的写法*/
+input[type="range"]::-moz-range-track{
+	height: 8px;
+	background:#999;
+	border-radius: 10px;
+	border:none;
+}
+input[type="range"]::-moz-range-thumb{ /*利用伪类设置滑块*/
+	height: 12px;
+	width: 12px;
+	background:linear-gradient(#FDE3EC,#1A99D9);
+	border:none;
+	border-radius: 100%;
+}
+/*加入媒体查询自适应*/
+@media only screen and (max-width: 510px), only screen and (max-height: 360px){
+	body{
+		font-size: 12px;
+	}
+	.start img{
+		width: 40px;
+		height: 40px;
+		left: calc(50% - 20px);
+		top: 80%;
+	}	
+	header{
+		height: 90px;
+	}
+
+	header h1{
+		font-size: 40px;
+		height: 35px;
+		line-height: 35px;
+	}
+	header ul li{
+		width: 36px;
+		height: 18px;
+		line-height: 18px;
+	}	
+	header ul li:first-child{
+		margin-right: -3px;
+	}	
+	.fork a img{
+		width: 70px;
+	}
+	.fork a img:hover,.fork a img:focus{
+		width: 80px;
+	}
+	.left{
+		top:110px;
+		left: calc(50% - 50px);
+		width: 100px;
+	}	
+}
+@media only screen and (max-height: 420px){
+	.start img{
+		width: 40px;
+		height: 40px;
+		left: 80%;
+		top: 80%;
+	}	
+}

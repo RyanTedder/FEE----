@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scale</title>
+	<script type="text/javascript">
+		function draw(){
+			var ctx=document.getElementById('myCanvas').getContext("2d");
+			ctx.translate(200,20);
+			for (var i = 1; i <=80; i++) {
+				ctx.save();
+				ctx.translate(30,30);
+				ctx.rotate(Math.PI*1/12);
+				ctx.scale(0.95,0.95);
+				ctx.fillStyle='rgba(255,0,0,'+(1-(i+30)/70)+')';
+				// ctx.globalAlpha="0.4";
+				ctx.beginPath();
+				ctx.arc(0,0,50,0,Math.PI*2,true);
+				ctx.closePath();
+				ctx.fill();
+				// ctx.restore();
+			}
+		}
+
+		window.onload=function(){
+			draw();
+		}
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="700" height="300"></canvas>
+</body>
+</html>

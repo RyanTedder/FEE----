@@ -1,0 +1,262 @@
+*{
+		margin:0px;
+		padding: 0px;
+	}
+	table {
+		text-align: center;
+	}
+	a:hover{
+       text-decoration-line: none;
+	}
+	 h2{
+     font-family: "Trebuchet MS",​Helvetica,​sans-serif;
+     color: #545454;
+     font-size: 29.9667px;
+     margin-left: 18px;
+     margin-top: 20px;
+     line-height: 	32.9667px;
+     font-weight: 400;
+}
+h3{
+	font-family: Arial,Helvetica,sans-serif;
+	 font-size: 15px;
+	 width: 96%;
+	 margin: 20px auto;
+}
+#container{
+	margin: 0 auto;
+	background-color: white;
+	width: 950px;
+}
+#top{
+	height: 150px;
+	background-color: white;
+}
+
+#header{
+	height: 105px;
+	background-color: white;
+}
+#header img{
+	float: left;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.input{
+	margin-top: 30px;
+	margin-right:40px;
+	float: right;
+}
+.input p{
+	font-family: "SimHei" serif;
+	font-size: 13px;
+}
+#nav{
+	height: 45px;
+	background-color: white;
+	}
+#nav li{
+	display: inline;
+	list-style-type: none;
+	float: left;
+	height: 43px;
+	width: 16.65%;
+	font-size: 13px;
+	text-align: center;
+	line-height: 43px;
+	background: url(images/nav-bg1.gif);
+
+}
+/*.navleft img{
+		float: left;
+}
+.navright img{
+		float: right;
+}*/
+.navleft{
+    border-left: 1px solid #DADADA;
+}
+.navright{
+    border-right: 1px solid #DADADA;
+}
+#nav a{
+	color: black;
+	font-family: "SimHei" serif;
+	text-decoration-line: none;
+	display: block;
+}
+#nav a:hover{
+	    color:white;;
+}
+#nav a:hover{
+    background: url(images/nav-bg2.gif);
+}
+#mid{
+    margin-top: 8px;
+	height: 680px;
+}
+#midtop{
+	height: 270px;
+	background:url(images/main-box.jpg) no-repeat;
+}
+#midtop li{
+	list-style-type: none;
+	margin-left: 35px;
+	background: url(images/bull.gif) no-repeat left center;
+	padding-left: 15px;
+}
+.midcontent a{
+	line-height: 30px;
+	text-decoration-line: none;
+	color:white;
+	font-size: 18px;
+}
+.midcontent a:hover{
+	text-decoration-line: underline;
+}
+.mida{
+    position: relative;
+    bottom: 120px;
+    left: 380px;
+    color: orange;
+}
+.extrapic{
+	position: relative;
+	left: 250px;
+	bottom: 160px;
+}
+#midtop img{
+	margin-top: 30px;
+	margin-left: 35px;
+}
+.pic1{
+	float: left;
+	margin-right: 10px;	
+	margin-top: 7px;
+}
+.pic2{
+	float: right;
+	margin-top: 7px;
+}
+#midclear{
+    clear: both;
+}
+#midwords{
+	margin-top: 15px;
+	height: 270px;
+	background-color: white;
+}
+#mleft{
+	width: 50%;
+	height: 248px;
+	float: left;
+	border-right: 1px solid #DADADA;
+}
+#mleft li{
+	height: 24px;
+	padding-left: 15px;
+	list-style-type: none;
+	text-decoration-line: none;
+	margin-top: 3px;
+	line-height: 24px;
+	background: url(images/bull1.gif) no-repeat center left;
+}
+.learn{
+	margin:15px 30px ;
+	height: 24px;
+	display: block;
+	color: orange;
+}
+#mleft p{
+	margin-bottom: 8px;
+	font-size: 35px;
+}
+#mright{
+	width: 405px;
+	height: 225px;
+	margin-left: 15px;
+	margin-right: 10px;
+	float: right;
+}
+.rightwords{
+    float: left;
+    width: 300px;
+}
+.rightwords p{
+    line-height: 25px;
+    margin-top: 10px;
+}
+.rightpic{
+	float: right;
+	margin-top: 15px;
+	margin-left: 0px;
+}
+#bot{
+	height: 300px;
+}
+#botpic{
+	height: 176px;
+	width: 950px;
+	border-radius: 10px;
+	border: 1px solid silver;
+	background: url(images/box-bg.gif);
+}
+#botpic p{
+	font-size: 30px;
+	height: 40px;
+	margin: 13px 23px;
+}
+.awards{
+	width: 155px;
+	height:100px;
+	float: left;
+	margin-left: 1px;
+	border-right: 1px solid #E3E3E3;
+}
+.rawards{
+    width: 155px;
+	height:100px;
+	float: left;
+	margin-left: 1px;
+}
+.awards img{
+    margin-left: 21px;
+}
+.rawards img
+{
+	  margin-left: 21px;
+}
+#botwords{
+	height: 120px;
+	font-size: 15px;
+	font-family: sans-serif;
+	margin-top: 38px;
+}
+.bottext ul{
+	width: 910px;
+	height: 24px;
+	margin: 0 auto;
+}
+.bottext li{
+	float: left;
+	list-style-type: none;
+	width: 15%;
+	height: 15px;
+	text-align: center;
+	line-height: 15px;
+}
+.litext{
+	border-right: 1px solid #702970;
+
+}
+.bottext a{
+	color:black;	
+}
+.p1{
+    float: left;
+    margin-top: 25px;
+}
+.p2{
+	float: right;
+	margin-top: 25px;
+}

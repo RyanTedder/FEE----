@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link rel="icon" href="/images/fish.ico">
+  </head>
+  <body>
+    <div class="start" id="start"> 
+      <img src="/images/timg.gif" alt="开始图标" title="点我随机播放！"/>
+    </div>
+    <div class="fork">
+      <a href="https://github.com/RyanTedder/SmallProgram">
+         <img src="/images/forkGithub.png" alt="Fork me on github" title="Fork me on github">
+      </a>          
+    </div>
+  	<header>
+  		 <h1 title="点我没用╮(╯_╰)╭"><%= title %></h1>
+  		 <ul class="type" id="type">
+  		 	<li data-type="dot" class="choosed">球形</li>
+  		 	<li data-type="column">线形</li>
+  		 </ul>
+  		 <p>     <!-- 音量控件，默认为50%大小 -->
+  		 	音量&nbsp;&nbsp;<input type="range" id="volume" min="0" max="100" value="50">
+  		 </p>
+  	</header>
+  <div class="left" title="播放列表">
+    <ul id="list">
+      <% music.forEach(function(name){ %>
+        <li title="<%=name%>"><%=name%></li>
+      <% }) %>
+    </ul>
+    <img src="/images/boy.gif" alt="男孩图片" title="寂寞寂寞就好">
+  </div>      
+	<div class="right" id="box" title="嗨起来！"></div>
+  <script type="text/javascript" src="/javascripts/MusicVisualizer.js"></script>  
+	<script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>

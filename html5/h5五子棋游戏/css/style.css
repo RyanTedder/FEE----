@@ -1,0 +1,9 @@
+body{
+	background: #F7F8CA;
+}
+canvas{
+	display: block;
+	margin: 50px auto;
+	cursor: pointer;
+	box-shadow: -2px -2px 2px #EFEFEF,5px 5px 5px #B9B9B9;
+}

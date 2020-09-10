@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="a6_3">
+<head>
+	<meta charset="UTF-8">
+	<title>使用factory方法自定义服务</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width:260px;
+			margin: 10px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c6_3">
+		<p class="show">{{str("我是返回的内容")}}</p>
+		<p class="show">{{name(1)}}</p>
+	</div>
+	<script type="text/javascript">
+		angular.module('a6_3',[])
+			.factory('$outfun',function(){
+				return {
+					str:function(s){
+						return s;
+					}
+				};
+			})
+			.factory('$outarr',function(){
+				return ['1','2','3'];
+			})
+			.controller('c6_3',function($scope,$outfun,$outarr){
+				$scope.str=function(n){
+					return $outfun.str(n);
+				}
+				$scope.name=function(n){
+					return $outarr[n];
+				}
+			});
+	</script>
+</body>
+</html>

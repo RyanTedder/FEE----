@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>控制器初始化$scope对象</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="c2_4">
+		<span>{{text}}</span>
+	</div>
+	<script type="text/javascript">
+		var a2_4=angular.module('a2_4',[]);
+		a2_4.controller('c2_4',['$scope',function ($scope) {
+			$scope.text='Hello! Angular';
+		}]);
+	</script>
+</body>
+</html>

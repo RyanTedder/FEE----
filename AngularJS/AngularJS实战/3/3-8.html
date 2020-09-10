@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="a3_8">
+<head>
+	<meta charset="UTF-8">
+	<title>作用域的级别</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin:0;			
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;	
+		}
+		ul .ng-scope{
+			background-color: #eee;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul .school{
+			float: right;
+			margin-right: 80px;
+		}
+		ul li span{
+			width: 52px;
+			float: left;
+			padding: 0 10px;
+		}
+		ul .focus{
+			background-color: #ccc;
+		}
+	</style>
+
+</head>
+<body>
+	<div ng-controller="c3_8_school">
+		<ul ng-controller="c3_8_class1">
+			<li ng-class="{{school}}">{{s_name}}{{c_name}}</li>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>英语</span>
+				<span>数学</span>
+			</li>
+			<li ng-repeat="stu in data">
+				<span>{{$index+1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.english}}</span>
+				<span>{{stu.maths}}</span>
+			</li>
+		</ul>
+		<ul ng-controller="c3_8_class2">
+			<li ng-class="{{school}}">{{s_name}}{{c_name}}</li>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>英语</span>
+				<span>数学</span>
+			</li>
+			<li ng-repeat="stu in data">
+				<span>{{$index+1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.english}}</span>
+				<span>{{stu.maths}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var a3_8=angular.module('a3_8',[]);
+		a3_8.controller('c3_8_school',['$scope',function($scope){
+			$scope.s_name="三园小学";
+			$scope.school="school";
+			$scope.bold="bold";
+		}]);
+		a3_8.controller('c3_8_class1',['$scope',function($scope){
+			$scope.c_name="三年级（1）班";
+			$scope.data=[{name:"陈玉宽",sex:"男",english:21,maths:95},
+						 {name:"刘1彪",sex:"男",english:22,maths:93}
+						 ];
+		}]);
+		a3_8.controller('c3_8_class2',['$scope',function($scope){
+			$scope.c_name="一年级（2）班";
+			$scope.school="school";
+			$scope.bold="bold";
+			$scope.data=[{name:"陈玉宽",sex:"男",english:21,maths:95},
+						 {name:"刘1彪",sex:"男",english:22,maths:93}
+						 ];
+
+		}]);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Compositing</title>
+</head>
+<body>
+	<canvas id="myCanvas" style="border: 1px solid;" width="300" height="200"></canvas>
+	<script type="text/javascript">
+		var ctx=document.getElementById('myCanvas').getContext("2d");
+		ctx.fillStyle="red";
+		ctx.fillRect(50,20,100,100);
+		ctx.fillStyle="blue";
+		// ctx.globalAlpha="0.5";
+		ctx.globalCompositeOperation="xor";
+		ctx.beginPath();
+		ctx.arc(150,125,50,0,Math.PI*2,true);
+		ctx.closePath();
+		ctx.fill();
+	</script>
+</body>
+</html>

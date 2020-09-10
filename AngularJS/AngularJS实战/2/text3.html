@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Angular表达式的容错性</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="c2_3">
+		<span>{{tmp}}</span>
+		<button ng-click="error()">点击</button>
+	</div>
+	<script type="text/javascript">
+		function c2_3($scope){
+			$scope.temp="Angular";
+			$scope.error=function(){
+				console.log(tmp);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="myCanvas" width="7000" height="2000"></canvas>
+	<script type="text/javascript">
+		var ctx=document.getElementById('myCanvas').getContext('2d');
+		// for(var i=0;i<12;i++) {
+		// 	ctx.strokeStyle="red";
+		// 	ctx.lineWidth=1+i;
+		// 	ctx.beginPath();
+		// 	ctx.moveTo(5,5+i*14);
+		// 	ctx.lineTo(140,5+i*14);
+		// 	ctx.stroke();
+		// 	lineCap
+		// var	lineCap=['butt','round','square'];
+		// //绘制参考线
+		// ctx.strokeStyle="red";
+		// ctx.beginPath();
+		// ctx.moveTo(10,10);
+		// ctx.lineTo(10,150);
+		// ctx.moveTo(150,10);
+		// ctx.lineTo(150,150);
+		// ctx.stroke();
+		// //绘制直线段
+		// ctx.strokeStyle="blue";
+		// for(var i=0;i<lineCap.length;i++) {
+		// 	ctx.lineWidth=20;
+		// 	ctx.lineCap=lineCap[i];
+		// 	ctx.beginPath();
+		// 	ctx.moveTo(10,30+i*50);
+		// 	ctx.lineTo(150,30+i*50);
+		// 	ctx.stroke();
+		// }
+		// lineJoin
+		// var lineJoin=['round','bevel','miter'];
+		// ctx.strokeStyle="blue";
+		// for (var i = 0; i < lineJoin.length; i++) {
+		// 	ctx.lineWidth=25;
+		// 	ctx.lineJoin=lineJoin[i];
+		// 	ctx.beginPath();
+		// 	ctx.moveTo(10+150*i,30);
+		// 	ctx.lineTo(100+150*i,30);
+		// 	ctx.lineTo(100+150*i,100);
+		// 	ctx.stroke();
+		// }
+		// var radgrad=ctx.createRadialGradient(55,55,20,100,100,90);
+		// var radgrad=ctx.createLinearGradient(130,130,200,200);
+		// radgrad.addColorStop(0,"#fff");
+		// radgrad.addColorStop(0.75,"#333");
+		// radgrad.addColorStop(1,"#000");
+		// ctx.fillStyle=radgrad;
+		// ctx.fillRect(10,10,200,200);
+		var img=new Image();
+		img.src="chris.png";
+		img.onload=function(){
+		var ptn=ctx.createPattern(img,'repeat');
+		ctx.fillStyle=ptn;
+		ctx.fillRect(0,0,3000,3000);
+		}
+	</script>
+</body>
+</html>

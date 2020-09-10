@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom</title>
+	<style type="text/css">
+*{padding: 0;margin:0;}
+#context{
+	margin: 0 auto;
+	width: 400px;
+	height: 70px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #F00;
+	padding-top: 30px;
+}
+.btns{
+	margin: 0 auto;
+	width: 200px;
+	height: 30px;
+}
+.btns span{
+	float: left;
+	width: 80px;
+	height: 25px;
+	border-radius: 10px;
+	background-color: #036;
+	border: 1px solid #eee;
+	margin-right: 10px;
+	color: #FFF;
+	text-align: center;
+	font-size: 15px;
+	cursor: pointer;
+	font-family: "微软雅黑";
+}
+
+	</style>
+
+</head>
+<body>
+	<div id="context">开始抽奖啦！</div>
+	<div class="btns">
+		<span id="begin">开始</span>
+		<span id="stop">结束</span>
+	</div>
+<script type="text/javascript">
+    var contents=["手机","电脑","苹果",'音箱','洗衣机','肥皂'];
+    timer=null;
+    var flag=0;
+	window.onload=function(){
+	var begin=document.getElementById('begin'),
+	    stop=document.getElementById('stop');
+          begin.onclick=playfun;
+          stop.onclick=stopfun;
+          //键盘事件
+    document.onkeyup=function(event){
+    	event=event||window.event;
+    	if(event.keyCode==13){
+    		if (!flag) {
+               playfun();
+               flag=1;
+    	}
+    	else{
+    		stopfun();
+    		flag=0;
+    	}}
+    }
+	function playfun(){
+        begin.style.background='#ccc';
+        clearInterval(timer);         //防止定时器叠加，根本停不下来
+       timer=setInterval(function(){
+       	var random=Math.floor(Math.random()*contents.length);
+            context.innerHTML=contents[random];
+        },50);
+	}
+	function stopfun(){
+        clearInterval(timer);
+        begin.style.background='#063';
+	}
+	}
+
+</script>
+</body>
+</html>

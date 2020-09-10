@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+	<style type="text/css">
+*{
+	padding:0;margin:0;
+}
+div{
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	margin: 10px;
+	opacity:0.3;
+	filter: alpha(opacity:30);
+	float: left;
+}
+
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var boxs=document.getElementsByTagName('div');
+			for (var i = 0; i < boxs.length; i++) {
+				 boxs[i].alpha=0.3;
+				 boxs[i].timer=null;
+			boxs[i].onmouseover=function(){
+				startFun(this,1);
+			}
+			boxs[i].onmouseout=function(){
+				startFun(this,0.3);
+			}
+			}
+		}
+		function startFun(target,index){
+            clearInterval(target.timer);
+         target.timer=setInterval(function(){
+		var speed=0;
+		speed=target.alpha<index?0.1:-0.1;
+            	if(target.alpha==index)
+            		{clearInterval(target.timer);}
+            	else{target.alpha+=speed;
+            		target.style.opacity=target.alpha;
+            	}
+            },30)
+		}
+	</script>
+</body>
+</html>

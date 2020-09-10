@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="a10_5">
+<head>
+	<meta charset="UTF-8">
+	<title>使用track by排序ng-repeat中的数据</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+	<style type="text/css">
+		.frame{
+			padding: 5px 8px;
+			margin: 0px;
+			font-size: 12px;
+			width: 320px;
+			background-color: #eee;
+		}
+		.frame ul{
+			margin:0px;
+			padding: 0px;
+			list-style-type: none;
+		}		
+		.frame ul li:first-child{
+			font-size:13px;
+			font-weight: bold;
+		}
+		.frame ul li{
+			height: 28px;
+			line-height: 28px;
+		}
+		.frame ul li span{
+			float:left;
+			width: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c10_5" class="frame">
+		<button ng-click="update()">更新</button>
+		<ul ng-repeat="user in users track by user.id">
+			<li>
+				<span>{{user.id}}</span>
+				<span>{{user.name}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		angular.module('a10_5',[])
+			.controller('c10_5',function($scope){
+				var users=[{id:9,name:"胡霞"},{
+					id:7,name:"陈玉宽"},{id:5,name:"张三"}];
+					$scope.users=users;
+					console.log($scope.users);
+					$scope.update=function(){
+						//从服务器获取数据
+						var result=[{id:4,name:"李思"},{id:1,name:"张开"},{id:3,name:"柯鹏"}];
+						$scope.users=result;
+						console.log($scope.users);
+					}
+			});
+	</script>
+</body>
+</html>

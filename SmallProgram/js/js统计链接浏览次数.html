@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+        var pageCount=new Array(0,0,0,0);
+	window.onload=initLinks;
+	function initLinks(){
+		for(var i=0;i<document.links.length;i++)
+		{
+			links[i].thisPage=i+1;
+			links[i].onclick=setContent;
+		}
+	}
+	function setContent(){
+		var newContent="this is "+this.thisPage;
+		pageCount[this.thisPage]++;
+		newContent+="you have come here"+pageCount[i];
+		document.getELementById("icontent").contentWindow.document.body.innerHTML=newContent;
+		return false;
+	}
+</script>
+</body>
+</html>

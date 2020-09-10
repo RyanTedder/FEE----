@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ <script type="text/javascript">
+ 	window.onload=function(){
+ 		document.getElementById('123').onclick=function(){
+ 			var request=new XMLHTTPRequest();
+ 			request.open("get","ok.php?number="+document.getElementById("123").value);
+ 			requet.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+ 			requet.send();
+ 			//监听事件
+ 			request.onreadystagechange=fucntion(){
+ 				if(request.status===200&&request.readyState===4){
+ 					document.getElementById('123').innerHTML=""+request.responseText;
+ 				}
+ 					else{
+ 						alert("error"+request.status);
+ 					}
+ 			}
+ 		}
+ 	}
+ </script>
+</body>
+</html>

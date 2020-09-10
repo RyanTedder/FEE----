@@ -1,0 +1,17 @@
+body,ul,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+
+body{font-size:12px;}
+
+img{border:none;}
+
+li{list-style:none;}
+
+input,select,textarea{border:none;outline:none;background:none}
+
+textarea{resize:none;}
+
+a{text-decoration:none;	font-family:"Microsoft YaHei","微软雅黑"}
+/*父级div定义伪类:after和zoom 清除浮动*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+

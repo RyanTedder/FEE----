@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="a3_3">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义过滤器</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin:0;			
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;	
+		}
+		ul .odd{
+			color: #0026ff;
+		}
+		ul .even{
+			color: #ff0000;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul li span{
+			width: 52px;
+			float: left;
+			padding: 0 10px;
+		}
+		ul .focus{
+			background-color: #ccc;
+		}
+	</style>
+
+</head>
+<body>
+	<div ng-controller="c3_3">
+		<ul>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>年龄</span>
+				<span>分数</span>
+			</li>
+			<li ng-repeat="stu in data | young:0" ng-class-odd="'odd'" ng-class-even="'even'">
+				<span>{{$index+1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.age}}</span>
+				<span>{{stu.score}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var a3_3=angular.module('a3_3',[]);
+		a3_3.controller('c3_3',['$scope',function($scope){
+			$scope.bold="bold";
+			$scope.data=[{name:"陈玉宽",sex:"男",age:21,score:95},
+						 {name:"胡霞",sex:"女",age:24,score:94},
+						 {name:"刘彪",sex:"男",age:26,score:91},
+						 {name:"胡1霞",sex:"女",age:27,score:90},
+						 {name:"刘1彪",sex:"男",age:27,score:93}
+						 ];
+
+		}]);
+		a3_3.filter('young',function(){
+			return function (e,type){
+				var _out=[];
+				var _sex=type?"男":"女";
+				for (var i = 0; i < e.length; i++) {
+					if(e[i].age>22 && e[i].age<28 && e[i].sex==_sex)
+						_out.push(e[i]);
+				}
+				return _out;
+			}
+		});
+	</script>
+</body>
+</html>

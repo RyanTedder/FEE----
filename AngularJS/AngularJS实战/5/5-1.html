@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="a5_1">
+<head>
+	<meta charset="UTF-8">
+	<title>Model组件的基础概念</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width:260px;
+			margin: 10px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_1">
+		<div class="show">{{name}}</div>
+		<input type="text" value="130" ng-model="score" />
+		<div class="show">{{score}}</div>
+	</div>
+	<script type="text/javascript">
+		var a5_1=angular.module('a5_1',[]);
+		a5_1.controller('c5_1',['$scope',function($scope) {
+			$scope.name="陈玉宽";
+		}]);
+	</script>
+</body>
+</html>

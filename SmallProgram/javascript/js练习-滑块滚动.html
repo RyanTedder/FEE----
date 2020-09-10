@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>鼠标拖动小方块</title>
+		<style type="text/css">
+			.lineDiv{position:absolute;height:5px;font-size:0;line-height:0;background:#999;width:500px;top:100px;left:50%;margin-left:-250px}
+			.lineDiv .minDiv{position:absolute;top:-5px;left:0;width:15px;height:15px;background:#000;cursor:pointer}
+		</style>
+	</head>
+	<body>
+		<center><h3>用鼠标拖动小方块</h3></center>
+		<div id="lineDiv" class="lineDiv">
+			<div id="minDiv" class="minDiv"></div>
+		</div>
+		<script>
+		window.onload=function(){		
+		var mindiv=document.getElementById("minDiv");
+		var linediv=document.getElementById("lineDiv");	
+        var ifmousedown=false;
+        mindiv.onmousedown=function(e){
+        	e.stopPropagation();  //防止事件冒泡
+        	ifmousedown=true;
+        }
+
+        	window.onmousemove=function(e){
+        if(ifmousedown){        		
+                e.stopPropagation;
+        		var x=e.clientX;
+        		var lineleft=getPosition(linediv).left;
+                var minleft=x-lineleft-5;
+                if(minleft>linediv.offsetWidth-5)
+                	{minleft=linediv.offsetWidth-5;}
+                if(minleft<0)
+                	{minleft=0;}
+        		mindiv.style.left=minleft+"px";
+        	}
+        }
+        mindiv.onmouseup=function(){
+        	ifmousedown=false;
+        }        
+
+		function getPosition(node){
+       var parent=node.offsetParent;
+       var left=node.offsetLeft;
+       var top=node.offsetTop;
+       while(parent){
+       	left+=parent.offsetLeft;
+       	top+=parent.offsetTop;
+       	parent=parent.offsetParent;
+       }
+       return{"left":left;"top":top;}
+		}
+		}
+
+		</script>	
+	</body>
+</html>

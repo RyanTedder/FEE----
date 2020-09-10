@@ -1,0 +1,102 @@
+#outbox{width: 100%;
+	      margin: 0 auto;
+        background-color: #FCFCFC;
+        border: 1px solid #AAAAAA;
+	      
+}
+#background-image{position: absolute;z-index: -999;left:50%;margin-left:-512px;}
+#header {width: 100%;
+	    	 text-align: center;
+	    	 font-family: "Microsoft YaHei","微软雅黑";      
+	
+}
+
+	.header_login{width: 250px;
+				        height: 35px;
+			      	  line-height: 35px;
+		      		  margin-right: 50px;
+		      		  float: right;
+}
+		.login_btn{width: 80px;
+				   height: 35px;
+				   line-height: 35px;
+			     float: left;
+			     font-family: "微软雅黑";
+			     font-size:12px;
+			     color:#5b5b5b;
+			     
+}	
+      .login{margin-right: 3px;
+}
+			.login a:hover .login_btn{background-color: #930000;
+									  color: white;
+}
+      .fr{float:left;}.fl{
+	float: left;
+}
+#container {position:relative;width: 100%;
+}
+
+#page_content {width: 400px; 
+               height: 300px; 
+               position: absolute; 
+               left: 50%; 
+               top: 20%; 
+               margin-left:-200px; 
+               margin-top: 14%; 		
+}
+
+
+
+.searchBox{
+	margin-top: 40px;
+}
+	.searchInput{                       
+	width: 314px;
+	height: 26px;
+	line-height: 30px\9;/*css hack 所有的IE浏览器*/
+	padding:0 10px;
+	border-top:  1px solid #7b7b7b;
+	border-bottom:  1px solid #7b7b7b;
+	border-left:  1px solid #7b7b7b;
+	
+}
+
+	.searchFind{
+	width:65px;
+	height: 28px;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family:"Microsoft YaHei","微软雅黑"; 
+	font-size: 12px;
+	background-color: #7b7b7b
+}
+	.searchFind:hover{
+	background-color:#45A2FF;
+}
+#input{background:white;}
+
+#footer {width: 1024px;
+	       left:50%;
+				 height: 35px;
+			   line-height: 35px;
+		     left: 100px;
+		     float: right;
+	       bottom: 1px;
+	       position: absolute;
+}
+
+  .love_btn{width: 80px;
+				   height: 35px;
+				   line-height: 35px;
+			     float: left;
+			     font-family: "寰蒋闆呴粦";
+			     font-size:12px;
+			     color:#5b5b5b;
+}
+  .love{
+}
+			.love a:hover .love_btn{background-color: #930000;
+									  color: white;
+}

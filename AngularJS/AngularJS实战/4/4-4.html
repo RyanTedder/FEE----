@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="a4_4">
+<head>
+	<meta charset="UTF-8">
+	<title>标记式注入</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		.show{
+			margin:10px 10px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c4_4">
+		<div class="show">{{text}}</div>
+		<input type="button" id="btnShow" value="弹出" ng-click="onClick('弹弹弹，弹走鱼尾纹')"/>
+		<input type="button" id="btnWrite" value="显示" ng-click="onWrite('我要变成肌肉男')">
+	</div>
+	<script type="text/javascript">
+		var c4_4=function($scope,$show,$write){
+			$scope.onClick=function(msg){
+				$show.show(msg);
+			}
+			$scope.onWrite=function(msg){
+				$scope.text=$write.write(msg);
+			}
+		}
+		c4_4.$inject=['$scope','$show','$write']; //标记式注入
+		angular.module('a4_4',[])
+			.controller('c4_4',c4_4)
+			.factory('$show',['$window',function($window){
+				return{
+					show:function(msg){
+						$window.alert(msg);
+					}
+				};
+			}])
+			.factory('$write',function(){
+				return {
+					write:function(msg){
+						return msg;
+					}
+				};
+			});
+	</script>
+</body>
+</html>

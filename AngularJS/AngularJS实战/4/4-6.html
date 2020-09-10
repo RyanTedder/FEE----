@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="a4_6">
+<head>
+	<meta charset="UTF-8">
+	<title>has和get方法</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="c4_6">
+		<!-- 视图控件 -->
+	</div>
+	<script type="text/javascript">
+		var a4_6=angular.module('a4_6',[])
+			.factory('$custom',function(){
+				return {
+					print:function(msg){
+						console.log(msg);
+					}
+				};
+			});
+		var injector=angular.injector(['a4_6','ng']);
+		var has=injector.has('$custom');  //返回布尔值
+		console.log(has);
+		if (has) {
+			var custom=injector.get('$custom'); //返回服务实例
+			custom.print("输出任何内容！");
+		}
+		a4_6.controller('c4_6',['$scope','$custom',function($scope,$custom){   //行内式注入
+			//控制器代码
+		}])
+	</script>
+</body>
+</html>

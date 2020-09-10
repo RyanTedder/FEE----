@@ -1,0 +1,75 @@
+@charset "utf-8";
+@import "test1";               //引入less文件，可以不加后缀
+@import (less) "test.css";         //引入css文件 
+body{
+	background-color: red;
+	font-size: 20px;
+	font-weight: bold;
+}
+/*注释，会被编译*/  
+//注释，不会被编译
+//变量
+@test_width:300px;
+ .box{
+ 	width: @test_width;
+ 	height: @test_width;
+ 	background-color: yellow;
+ 	.test_01(20px);
+ 	.border_radius(bold); 	
+ }
+
+ //混合
+ .div{
+ 	.box;
+ }
+ .test_01( @test_01:15px){
+ 	border-radius: @test_01;
+ }
+
+.border_radius(@radius){
+	font-weight: @radius;
+}
+//匹配模式
+.pos(r){position:relative;}
+.pos(f){position:fixed;}
+.pos(a){position:absolute;}
+
+.test{
+ .pos(r);
+.test_03(index, a,b) ;
+}
+
+.test_03(@_ , @a,@b){         // @_表示默认都带有的样式
+     color:@a;
+     font-size:@b;
+     font-family: Arial;
+}
+.test_03(index , @a,@b){       
+     color:@a;
+     font-size:@b;
+}
+//运算
+@width_test:13px;
+.test_04{
+    width:(@width_test)*3-5px; 
+    color: #ccc-10; 
+}
+
+//@arguments数组
+.test_border(@a:10px,@b:solid,@c:red){
+	border: @arguments;
+}
+.test_05{
+	.test_border();
+}
+
+//避免编译
+.test_06{
+	width: ~'calc(300px - 50%)';
+}
+
+//!important
+.test_07{
+	.box !important;
+	.test_05 !important;
+}

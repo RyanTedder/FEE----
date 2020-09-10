@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="700" height="300" style="border:1px solid #ccc;"></canvas>
+	<input type="button" onclick="clearMap();" value="清空画布"/>
+	<script type="text/javascript">
+		var ctx=document.getElementById('myCanvas').getContext("2d");
+		function clearMap(){
+      		ctx.clearRect(0,0,700,300);
+		}
+		var canvas=document.getElementById('myCanvas');
+		var context=canvas.getContext("2d");
+		//绘制矩形(填充)
+		context.fillStyle="#ff00ff";
+		context.fillRect(50,25,100,50);
+		//绘制对角线
+		context.moveTo(0,0);
+		context.lineTo(300,150);
+		context.stroke();
+		context.moveTo(300,0);
+		context.lineTo(0,150);
+		context.stroke();
+		//绘制矩形（轮廓）
+		context.strokeStyle="silver";
+		context.strokeRect(0,0,50,25);
+		//绘制圆形
+		context.fillStyle="blue";
+		context.beginPath();
+		context.arc(200,110,30,0,Math.PI*2,true);
+		context.closePath();
+		context.fill();
+		//绘制圆形轮廓
+		for(var i=0;i<15;i++) {
+			context.strokeStyle="#ff00ff";
+			context.beginPath();
+			context.arc(0,100,i*10,0,Math.PI*3/2,true);
+			context.closePath();
+			context.stroke();
+		}
+		//绘制三角形
+		context.strokeStyle="red";
+		context.beginPath();
+		context.moveTo(25,25);
+		context.lineTo(25,130);
+		context.lineTo(130,25);
+		context.closePath();
+		context.stroke();
+		//绘制二次方贝塞尔曲线
+		context.strokeStyle="dark";
+		context.beginPath();
+		context.moveTo(0,150);
+		context.quadraticCurveTo(75,50,300,150);
+		context.stroke();
+		context.globalCompositeOperation="source-over";
+		//绘制控制点和控制线,控制点为两直线的交点
+		context.strokeStyle="#ff00ff";
+		context.beginPath();
+		context.moveTo(0,150);
+		context.lineTo(75,50);
+		context.moveTo(75,50);
+		context.lineTo(300,150);
+		context.stroke();
+		//绘制三次方贝塞尔曲线
+		context.strokeStyle="dark";
+		context.beginPath();
+		context.moveTo(0,150);
+		context.bezierCurveTo(25,50,75,50,300,150);
+		context.stroke();
+		context.globalCompositeOperation="source-over";
+		//控制线和控制点
+		context.strokeStyle="blue";
+		context.beginPath();
+		context.moveTo(0,150);
+		context.lineTo(25,50);
+		context.moveTo(75,50);
+		context.lineTo(300,150);
+		context.stroke();
+		//保存与恢复canvas状态
+		context.fillStyle="#ff00ff";
+		context.strokeStyle="blue";
+		context.fillRect(20,20,100,100);
+		context.strokeRect(20,20,100,100);
+		context.fill();
+		context.stroke();
+		//保存当前Canvas状态
+		context.save();
+		//绘制另外一个矩形
+		context.fillStyle="#ff0000";
+		context.strokeStyle="green";
+		context.fillRect(120,20,100,100);
+		context.strokeRect(120,20,100,100);
+		context.fill();
+		context.stroke();
+		//恢复第一个矩形的状态
+		context.restore();
+		//绘制两个矩形
+		context.fillRect(20,140,50,50);
+		context.strokeRect(80,140,50,50);
+		context.fill();
+		context.stroke();
+	</script>
+</body>
+</html>

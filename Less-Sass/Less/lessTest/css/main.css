@@ -1,0 +1,51 @@
+@charset "utf-8";
+body {
+  width: 13px;
+}
+body {
+  font-size: 13px;
+}
+body {
+  background-color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+/*注释，会被编译*/
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.div {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.test {
+  position: relative;
+  font-family: Arial;
+  color: a;
+  font-size: b;
+}
+.test_04 {
+  width: 34px;
+  color: #c2c2c2;
+}
+.test_05 {
+  border: 10px solid #ff0000;
+}
+.test_06 {
+  width: calc(300px - 50%);
+}
+.test_07 {
+  width: 300px !important;
+  height: 300px !important;
+  background-color: yellow !important;
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  border: 10px solid #ff0000 !important;
+}

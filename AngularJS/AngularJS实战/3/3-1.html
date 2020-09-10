@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="a3_1">
+<head>
+	<meta charset="UTF-8">
+	<title>排序(orderBy)方式过滤</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		ul{
+			list-style-type: none;
+			width: 408px;
+			margin:0;			
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			padding: 5px 0;	
+		}
+		ul .odd{
+			color: #0026ff;
+		}
+		ul .even{
+			color: #ff0000;
+		}
+		ul .bold{
+			font-weight: bold;
+		}
+		ul li span{
+			width: 52px;
+			float: left;
+			padding: 0 10px;
+		}
+		ul .focus{
+			background-color: #ccc;
+		}
+	</style>
+
+</head>
+<body>
+	<div ng-controller="c3_1">
+		<ul>
+			<li ng-class="{{bold}}">
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>年龄</span>
+				<span>分数</span>
+			</li>
+			<li ng-repeat="stu in data | orderBy: -score' | limitTo: 2" ng-class-odd="'odd'" ng-class-even="'even'">
+				<span>{{$index+1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{stu.age}}</span>
+				<span>{{stu.score}}</span>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var a3_1=angular.module('a3_1',[]);
+		a3_1.controller('c3_1',['$scope',function($scope){
+			$scope.bold="bold";
+			$scope.data=[{name:"陈玉宽",sex:"男",age:21,score:95},
+						 {name:"胡霞",sex:"女",age:22,score:94},
+						 {name:"刘彪",sex:"男",age:22,score:91},
+						 {name:"胡1霞",sex:"女",age:22,score:90},
+						 {name:"刘1彪",sex:"男",age:22,score:93}
+						 ];
+
+		}]);
+	</script>
+</body>
+</html>

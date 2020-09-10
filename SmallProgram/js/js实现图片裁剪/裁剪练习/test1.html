@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="test1.js"></script>
+	<style type="text/css">
+body{background-color: #333;}
+#box{position: absolute;top: 100px;left: 200px;width: 500px;height: 500px;}
+#img1{opacity: 0.4;position: absolute;top: 0;left: 0;}
+#img2{position: absolute;top: 0;left: 0;clip: rect(0,200px,200px,0);}
+#main{border:1px solid #fff;position: absolute;width: 200px;height: 200px; }
+.mindiv{width: 8px;height: 8px;position: absolute;background-color: #fff;}
+.up{left: 50%;margin-left: -4px;top:-4px;cursor: n-resize;}
+.up-right{top: -4px;right: -4px;cursor: ne-resize;}
+.up-left{top: -4px;left: -4px;cursor: nw-resize;}
+.left{margin-top: -4px;left: -4px;top: 50%;cursor:w-resize;}
+.right{right: -4px;margin-top: -4px;top: 50%;cursor: e-resize;}
+.bot{margin-left:-4px;left: 50%;bottom: -4px;cursor: s-resize;}
+.bot-right{bottom: -4px;right: -4px;cursor:se-resize; }
+.bot-left{bottom: -4px;left: -4px;cursor: sw-resize;}
+
+	</style>
+</head>
+<body>
+<div id="box">
+	<img id="img1" src="psbe.jpg">
+	<img id="img2" src="psbe.jpg">
+	<div id="main">
+		<div class="mindiv up"></div>
+		<div class="mindiv up-right"></div>
+		<div class="mindiv up-left"></div>
+		<div class="mindiv left"></div>
+		<div id="rightdiv"class="mindiv right"></div>
+		<div class="mindiv bot"></div>
+		<div class="mindiv bot-right"></div>
+		<div class="mindiv bot-left"></div>
+	</div>
+</div>
+</body>
+</html>

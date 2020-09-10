@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="a5_4">
+<head>
+	<meta charset="UTF-8">
+	<title>控制器的属性和方法</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width:260px;
+			margin: 10px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_4">
+		<div>
+			<input ng-model="a" value="0">
+			<span>{{type}}</span>
+			<input type="text" ng-model="b" value="0">
+			<span>=</span>
+			<span class="show">{{result}}</span>			
+		</div>
+ 		<div>
+ 			<button ng-click="change(1)">加法</button>
+ 			<button ng-click="change(0)">乘法</button>
+ 		</div>
+	</div>
+	<script type="text/javascript">
+		var a5_4=angular.module('a5_4',[]);
+		a5_4.controller('c5_4',['$scope',function($scope){
+			$scope.type="+";
+			$scope.change=function(i){
+				switch(i){
+					case 0:
+					$scope.type="*";
+					$scope.result=$scope.a*$scope.b;
+					break;
+					case 1:
+					$scope.type="+";
+					$scope.result=parseInt($scope.a)+parseInt($scope.b);
+					break;
+				}
+			}
+		}])
+	</script>
+</body>
+</html>

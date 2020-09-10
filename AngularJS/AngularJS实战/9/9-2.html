@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="a9_2">
+<head>
+	<meta charset="UTF-8">
+	<title>调用$location对象的读写方法</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		.frame{
+			padding: 5px 8px;
+			margin: 0px;
+			font-size: 12px;
+			width: 320px;
+			background-color: #eee;
+		}
+		.frame div{
+			margin: 3px 0;
+		}		
+	</style>
+</head>
+<body>
+	<div ng-controller="c9_2" class="frame">
+		<div>页面地址:{{url}}</div>
+		<div>hash片段:{{hash}}</div>
+		<div>查询字符:{{search}}</div>
+		<div>页面路径:{{path}}</div>
+		<button ng-click="change()">修改</button>
+	</div>
+	<script type="text/javascript">
+		angular.module('a9_2',[])
+			.controller('c9_2',function($scope,$location){
+				$scope.url=$location.url();
+				$scope.hash=$location.hash();
+				$scope.search=$location.search();
+				$scope.path=$location.path();
+				$scope.change=function(){
+				$location.search({'c':'3','d':'4'});
+				}
+			});
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传统的Ajax方式与服务端交互</title>
+	<link rel="stylesheet" type="text/css" href="css7.css">
+</head>
+<body>
+	<div class="frame">
+		<ul id="stuInfo">
+			<li>正在加载中..</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		(function(){
+			var xhr=null;
+			if(window.ActiveXObject){
+				xhr=new ActiveXObject("Mircrosoft.XMLHTTP");
+			} else if(window.XMLHttpRequest){
+				xhr=new XMLHttpRequest();
+			}
+
+			xhr.open("GET","stu.php",true);
+			xhr.send();
+
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						var html="";
+						var data=eval("("+xhr.responseText+")");
+						for (var i = 0; i < data.length; i++) {
+							html+="<li><span>"+data[i].Code+"</span>";
+							html+="<span>"+data[i].Name+"</span>";
+							html+="<span>"+data[i].Score+"</span>";
+						}
+						document.getElementById('stuInfo').innerHTML=html;
+					}
+				}
+			}			
+		})();
+	</script>
+</body>
+</html>

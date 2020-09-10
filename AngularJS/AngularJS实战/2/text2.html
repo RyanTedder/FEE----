@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>窗口对象在表达式中的使用</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="c2_2">
+		<input type="text" ng-model="text" />
+		<button ng-click="show()">显示</button>
+	</div>
+ 	<script type="text/javascript">
+ 		function c2_2($scope,$window){
+ 			$scope.text="";
+ 			$scope.show=function(){
+ 				$window.alert("您输入的内容是:"+$scope.text);
+ 			};
+ 		}
+ 	</script>
+</body>
+</html>

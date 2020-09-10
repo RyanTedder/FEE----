@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style type="text/css">
+		body{
+			background:linear-gradient(top left,yellow,blue);
+		}
+		div{
+			border: 1px solid blue;
+		}
+		img{
+			background-color: red;
+			padding: 30px;
+			width: 200px;
+			margin: 50px;
+			-moz-transform:rotate(0deg);
+			-moz-transition:background-color 3s linear,-moz-transform 3s linear;	
+		}img:hover{
+			background-color: blue;
+			-moz-transform:rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+	<div><img src="timg.jpg"></div>
+</body>
+</html>

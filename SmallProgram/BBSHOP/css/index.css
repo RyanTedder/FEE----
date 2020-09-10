@@ -1,0 +1,96 @@
+@charset "utf-8";
+#content {
+	width:100%;
+	margin-top: 5px;
+	background-color: #FCFCFC;
+}
+/*pic_ads部分*/
+.pic_ads{
+    width: 875px;
+    margin-left: 58px;
+	
+}
+/*pic_ads_top部分*/
+.pic_ads_top{
+	height: 316px;
+}
+#focus_ads{
+	width: 649px;
+	height: 316px;
+	float: left;
+}
+.right_ads{
+	margin-left: 5px;
+	float: left;
+}
+
+/*pic_ads_bottom部分*/
+.pic_ads_bottom{
+	margin-top: 4px;
+}
+.pic_ads_bottom li{
+	float: left;
+	margin-right: 4px;
+}
+.pic_ads_bottom li img{
+    width: 214px;
+    height: 131px;
+}
+/*allGoods部分*/
+#allGoods{
+	width: 950px;
+	padding: 20px;
+}
+#allGoods h1{
+	color:#0088bb;
+}
+#allGoods .item{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+#allGoods .item h2{
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 2px solid #0088bb;
+	margin-bottom: 10px;
+}
+#allGoods .item ul{
+
+}
+#allGoods .item li{                
+	display: inline;
+	margin:0 30px;
+}
+#allGoods .item li a img{
+	width: 230px;
+	height: 230px;
+	border: none;
+}
+#menu{
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	margin-left: 495px;
+	width: 80px;
+}
+#menu .toTop{
+	bottom:0;
+	position: fixed;
+}
+#menu ul li a{
+	display: block;
+	margin:5px 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	width: 80px;
+	height: 50px;
+	line-height: 50px;
+	text-decoration: none;
+	text-align: center;
+}
+#menu ul li a:hover,
+#menu ul li a.current{
+    color: #FDFDFC;
+    background-color: #5393D9;
+}

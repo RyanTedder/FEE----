@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>h5</title>
+	<script type="text/javascript">
+		function multi(){
+			a=parseInt(prompt("请输入第一个数字。",13));
+			b=parseInt(prompt("请输入第二个数字。",13));
+			document.forms["form"]["result"].value=a*b;
+		}
+	</script>
+</head>
+<body onload="">
+<div>
+	<form action="#" method="post" autocomplete="on" name="form" > 
+		请输入网址：<input type="url" required="required" /><br/>
+		请输入数字：<input type="number" min="0" max="20" step="2"  value="3" /><br/>
+		请输入数值：<input type="range" min="1" max="30"/><br/>
+		请输入日期：<input type="month" /><br/>
+		请输入时间：<input type="datetime-local" name="datetime1" /><br/>
+		请输入搜索关键词：<input type="search"><br/>
+		请输入电话：<input type="tel" placeholder="tel"><br/>
+		请输入邮政编码：<input type="text" pattern="[0-9]{6}" title="请输入6位编码"><br/>
+		请输入颜色：<input type="color"><br/>
+		请选择加密强度：<keygen name="security"><br/>
+		输入喜欢的城市：<input type="text" list="cityList" id="city"><br/>
+		<datalist id="cityList">
+			<option value="beijing">beijing</option>
+			<option value="wuhan">wuhan</option>
+			<option value="chengdu">chengdu</option>
+			<option value="hebei">hebei</option>
+			<option label="linbi" value="linbi">
+		</datalist>
+		两数的成绩为：<output name="result"></output><br/>
+		上传文件：<input type="file" multiple="multiple"><br/>
+		提交：<input type="submit" id="submit" autocomplete="on" autofocus />	
+		提交：<input type="submit" id="submit" autocomplete="on" formaction="#" formmethod="get" />	
+		提交：<input type="submit" id="submit" autocomplete="on" formaction="#" />	
+		提交：<input type="image" src="chris.png" width="50px" height="50px" id="submit" autocomplete="on" formaction="#" />	
+	</form>
+</div>
+<script type="text/javascript">
+	if (!("autofocus" in document.createElement('input'))) {
+		document.getElementById('submit').focus();
+	}
+</script>
+</body>
+</html>

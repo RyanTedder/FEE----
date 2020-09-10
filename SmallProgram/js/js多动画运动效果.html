@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js多动画</title>
+</head>
+<style type="text/css">
+*{padding: 0;margin:0;list-style: none;}
+ul li{width: 200px;height: 100px;background: yellow;margin-bottom: 23px;}
+
+</style>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aLi=document.getElementsByTagName('li');
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].timer=null;   //防止相互抢夺定时器资源    不需要加var
+				aLi[i].onmouseover=function(){
+					startMove(this,400);
+				}
+				aLi[i].onmouseout=function(){
+					startMove(this,200);
+				}
+			}
+		}
+		function startMove(target,width){
+			clearInterval(target.timer);
+			target.timer=setInterval(function(){
+			var speed=(width-target.offsetWidth)/8;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(target.offsetWidth==width)
+					{clearInterval(target.timer);}
+				else{
+					target.style.width=target.offsetWidth+speed+'px';
+				}
+			},30)
+		}
+	</script>
+</body>
+</html>

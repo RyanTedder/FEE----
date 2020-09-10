@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="a2_10">
+<head>
+	<meta charset="UTF-8">
+	<title>使用指令复制元素</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<style type="text/css">
+body{
+		font-size: 12px;
+	}
+ul{
+	list-style-type: none;
+	width:400px;
+	padding:0;
+	margin:0;
+}
+ul li{
+	float: left;
+	padding: 5px 0;
+}
+ul li span{
+	width: 50px;
+	float: left;
+	padding:0 10px;
+}
+
+</style>
+
+<body>
+	<div ng-controller="c2_10">
+		<ul>
+			<li>
+				<span>序号</span>
+				<span>姓名</span>
+				<span>性别</span>
+				<span>是否开头</span>
+				<span>是否末尾</span>
+			</li>
+			<li ng-repeat="stu in data">
+				<span>{{$index+1}}</span>
+				<span>{{stu.name}}</span>
+				<span>{{stu.sex}}</span>
+				<span>{{$first?'是':'否'}}</span>
+				<span>{{$last?'是':'否'}}</span>
+			</li>
+		</ul>
+	</div>
+		<script type="text/javascript">
+		var a2_10=angular.module('a2_10',[]);
+		a2_10.controller('c2_10',['$scope',function ($scope){
+			$scope.data=[{name:"陈玉宽",sex:"男"},
+					     {name:"刘彪",sex:"男"},
+					     {name:"胡霞",sex:"女"}];
+		}]);
+		</script>
+</body>
+</html>

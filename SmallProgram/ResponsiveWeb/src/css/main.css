@@ -1,0 +1,85 @@
+/*********
+ *页面样式
+ ************/
+ 
+ /* ======
+
+ 	======*/
+
+ html {
+ 	font-size:62.5%;
+ 	color: #222;
+ }
+
+选中文字时的样式
+ ::selection {
+ 	background-color: #ccc;
+	text-shadow: none;
+ }
+
+ ul {
+ 	margin: 0;
+ 	padding:0;
+ }
+
+ li {
+ 	list-style: none;
+ }
+
+ /* ======
+ 	工具样式
+ 	====== */
+.invisible{
+	visibility: hidden;
+}
+ .text-hide{
+ 	font: 0/0 a;
+ 	color: transparent;
+ 	text-shadow: none;
+ 	background-color: transparent;
+ 	border: 0;
+ }
+ .center-block{
+ 	display: block;
+ 	margin-right: auto;
+ 	margin-left: auto;
+ }
+ .pull-right{
+ 	float: right !important;
+ }
+ .pull-left{
+ 	float: left !important;
+ }
+ .text-right{
+ 	text-align: right !important;
+ }
+ .text-left{
+ 	text-align: left !important;
+ }
+ .text-center{
+ 	text-align: center !important;
+ }
+ .hide{
+ 	display: none !important;
+ }
+ .show {
+ 	display: block !important;
+ }
+ .clearfix:after{
+ 	content: '';
+ 	display: block;
+ 	height: 0;
+ 	clear: both;
+ 	visibility: hidden;
+ }
+ .clearfix:after,.clearfix:before{
+ 	content: "";
+ 	display: table;
+ }
+ .clearfix:after{
+ 	clear: both;
+ }
+ /*兼容IE6，7*/
+ .clearfix{
+ 	zoom:1;
+ }

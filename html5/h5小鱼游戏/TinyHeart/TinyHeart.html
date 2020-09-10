@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>爱心鱼</title>
+	<link rel='icon' href='src/fish.ico ' type='image/x-ico' />
+	<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	}
+body{
+	padding-top: 8px;
+	background: #F7F8CA url(src/bg.png) no-repeat;
+	background-size: auto 85%;
+	background-position: -10px 120px;
+}
+body img{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 150px;
+	transition: width 0.2s linear;	
+}
+body img:hover,img:focus{
+	width: 160px;
+}
+.all_bg{
+	width: 800px;
+	height: 580px;
+	margin: 0 auto;
+	position: relative;
+}
+#allcanvas{
+	position: relative;
+	width:800px;
+	height: 580px;
+	margin: 0px;
+	cursor: pointer;
+}
+#canvas1{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	border-radius: 15px;
+}
+#canvas2{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	border-radius: 15px;
+}
+	</style>
+</head>
+<body>
+	<a href="https://github.com/RyanTedder/SmallProgram"><img src="src/forkGithub.png" alt="Fork me on github" title="Fork me on github"></a>
+	<div class="all_bg" id="wrap">
+	<audio autoplay loop >
+		<source src="bgMusic.mp3" type="audio/mpeg">
+	</audio>	
+		<div id="allcanvas">
+			<canvas id="canvas1" width="800" height="580"></canvas>
+			<canvas id="canvas2" width="800" height="580"></canvas>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/commonFunctions.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/background.js"></script>	
+	<script type="text/javascript" src="js/ane.js"></script>
+	<script type="text/javascript" src="js/fruit.js"></script>
+	<script type="text/javascript" src="js/mom.js"></script>
+	<script type="text/javascript" src="js/collision.js"></script>
+	<script type="text/javascript" src="js/baby.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/wave.js"></script>
+	<script type="text/javascript" src="js/halo.js"></script>
+	<script type="text/javascript" src="js/dust.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" id="btn" value="按钮"/>
+		<a href="abc.html" id="atag">链接</a>
+	</div>
+	<script type="text/javascript">
+	function test(event) {
+		alert(event.target.nodeName);
+		event.stopPropagation();   //防止事件冒泡
+     }
+     function atest(event){
+     	alert('链接');
+     	event.stopPropagation();
+     	event.stopDefault();       //阻止默认事件
+     }
+		var btn=document.getElementById('btn');
+		var atag=document.getElementById('atag');
+		// //DOM0浏览器事件处理       通用
+		// btn.onclick=function(){
+		// 	alert('Error!');
+		// }
+		
+		// //DOM2浏览器事件处理       非IE使用
+		// btn.addEventHandler('click',test,false);  //false采用事件冒泡（常用）；true采用事件捕获
+		// btn.removeEventHandler('click',test,flase);
+
+		// // IE浏览器事件处理         IE使用
+		// btn.attachEvent('onclick',test);
+		// btn.detachEvent('onclick',test);
+
+        //跨浏览器事件处理         解决不兼容的问题
+		var eventUtil={
+			//添加句柄
+			addHandler:function(element，type，handler){
+				if(element.addEventListener)
+				{
+					element.addEventListener(type,handler,false);
+				}
+				else if(element.attachEvent)
+				{
+					element.attachEvent('on'+type,handler);
+				}
+				else{
+ 					element['on'+type]=handler;
+				}
+			}
+		},
+		   //删除句柄
+			delHandler:function(element，type，handler){
+				if(element.removeEventListener)
+				{
+					element.removeEventListener(type,handler,false);
+				}
+				else if(element.detachEvent)
+				{
+					element.detachEvent('on'+type,handler);
+				}
+				else{
+ 					element['on'+type]=null;
+				}
+			},
+			
+		};
+		eventUtil.addHandler(btn,'click',test);
+		eventUtil.addHandler(atag,'click',atest);
+		// eventUtil.delHandler(btn,'click',test);
+	</script>
+</body>
+</html>

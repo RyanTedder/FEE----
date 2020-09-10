@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom</title>
+</head>
+<body>
+	<div id="pdiv"></div>
+	<div id="cdiv"></div>
+	<script type="text/javascript">
+		function fixContains(a,b){
+			try{
+				while(b=b.parentNode)
+				{
+					if(b===a)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+		catch(e){
+			return false;
+		}
+		}
+		var pNode=document.getElementById('pdiv');
+		var cNode=document.getElementById('cdiv');
+		alert(fixContains(pNode,cNode));
+		// alert(pNode.contains('cNode'));
+		
+		// DOM获取当前元素属性
+		console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__));
+		console.log(Object.getOwnPropertyNames(document.createElement("p").__proto__.__proto__));
+	</script>
+</body>
+</html>

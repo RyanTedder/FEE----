@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jstest</title>
+</head>
+<body>
+	<div id="container">23333</div>
+	<script type="text/javascript">
+		var con=document.getElementById('container');
+		// if(con.nodeType==Node.ELEMENT_NODE)
+		// {
+		// 	alert("element");
+		// }
+		console.log(con.nodeName+"/"+con.nodeValue);
+		var attriNode=con.attributes[0];
+		console.log(attriNode.nodeName+"/"+attriNode.nodeValue);
+		var textNode=con.childNodes[0];
+		console.log(textNode.nodeName+"/"+textNode.nodeValue);
+		console.log(document.doctype.nodeName+"/"+document.doctype.nodeValue);
+		var frag=document.createDocumentFragment();
+		console.log(frag.nodeName+"/"+frag.nodeValue);
+	</script>
+</body>
+</html>

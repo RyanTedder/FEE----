@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="a5_5">
+<head>
+	<meta charset="UTF-8">
+	<title>控制器的属性和方法的继承</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<style type="text/css">
+		body{
+			font-size: 12px;
+		}
+		.show{
+			background-color: #ccc;
+			padding: 8px;
+			width:260px;
+			margin: 10px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="c5_5">
+		<div class="show">
+			{{name_a+"/"+name_b+"/"+name_c+"/"+score}}
+		</div>
+		<div ng-controller="c5_5_1">
+			<div class="show">
+				{{name_a+"/"+name_b+"/"+name_c+"/"+score}}
+			</div>
+			<div ng-controller="c5_5_1_1">
+				<div class="show">
+					{{name_a+"/"+name_b+"/"+name_c+"/"+score}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var a5_5=angular.module('a5_5',[]);
+		a5_5.controller('c5_5',['$scope',function($scope){
+			$scope.name_a="陈玉宽";
+			$scope.score="96";
+		}]);
+		a5_5.controller('c5_5_1',['$scope',function($scope){
+			$scope.name_b="胡霞";
+			$scope.score="88";
+		}]);
+		a5_5.controller('c5_5_1_1',['$scope',function($scope){
+			$scope.name_c="刘彪";
+			$scope.score="61";
+		}]);
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js选择样式</title>
+	<style type="text/css">
+*{padding: 0;margin: 0;}
+#box{
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	background: blue;
+}
+	</style>
+</head>
+<body>
+	<div id="box" <!-- style="width:200px" -->></div>
+	<script type="text/javascript">
+		window.onload=function(){
+               startMove();
+		}
+		function startMove(){
+			var box=document.getElementById('box');
+			setInterval=(function(){
+                 box.style.width=parseInt(getStyle(box,'width'))+1+'px';
+			},30)
+		}
+		function getStyle(obj,attr){
+			if(obj.currentStyle){                       //IE
+				return obj.currentStyle[attr];
+			}
+			else{
+				return obj.getComputedStyle(obj,false)[attr];     //非IE
+			}
+		}
+	</script>
+</body>
+</html>
