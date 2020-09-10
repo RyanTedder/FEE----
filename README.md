@@ -25,6 +25,10 @@
 >
 > ​	---基于javascript的Node.js的学习
 >
+> ---Photoshop
+>
+> ​	---学习PS的一些练习，娱乐性为主
+>
 > ---SmallProgram
 >
 > ​	---前端页面的开发设计小练习
